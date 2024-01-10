@@ -25,8 +25,8 @@ const About = () => {
             <p>
               Currently, Samora focuses on frontend development and visual
               design at Kriterion, leveraging some of the trendiest and latest
-              technologies. Working closely with his team, Samora's role is key
-              in conceptualizing designs and translating them into workable,
+              technologies. Working closely with his team, Samora&apos;s role is
+              key in conceptualizing designs and translating them into workable,
               wonderful features.
             </p>
 
@@ -48,7 +48,7 @@ const About = () => {
 
             <p>
               His educational background is based in the creative field, having
-              obtained his Bachelor's in Film Arts from Open Window, an
+              obtained his Bachelor&apos;s in Film Arts from Open Window, an
               institute based in Centurion, Gauteng.
             </p>
 
