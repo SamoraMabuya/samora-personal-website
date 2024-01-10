@@ -3,3 +3,27 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('erode.css');
+@import url('recia.css');
+body {
+  background-color: #e4e4e7;
+}
+
+h1,
+h2 {
+  font-family: Erode, sans-serif;
+  /* Fallback font */
+  opacity: 0.7;
+}
+
+p {
+  font-family: Recia, serif;
+  /* Fallback font */
+  opacity: 0.9;
+}
+
+span {
+  font-family: 'erode', sans-serif;
+  /* Fallback font */
+  opacity: 0.7;
+}

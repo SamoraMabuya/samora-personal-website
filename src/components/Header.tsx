@@ -1,50 +1,95 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { IconTwitter, IconGithub, IconBxlLinkedinSquare } from './Icons'
+import { useRouter } from 'next/router'
 
 const Header = () => {
+  const router = useRouter()
   const [isNavOpen, setIsNavOpen] = useState(false)
+  const [shouldScrollToContact, setShouldScrollToContact] = useState(false)
+
   useEffect(() => {
-    function handleResize() {
-      if (window.innerWidth >= 768 && isNavOpen) {
-        setIsNavOpen(false)
+    const handleRouteChange = (url: string) => {
+      if (url === '/' && shouldScrollToContact) {
+        document
+          .getElementById('contact-section')
+          ?.scrollIntoView({ behavior: 'smooth' })
+        setShouldScrollToContact(false) // Reset the state
       }
     }
 
-    window.addEventListener('resize', handleResize)
+    router.events.on('routeChangeComplete', handleRouteChange)
 
     return () => {
-      window.removeEventListener('resize', handleResize)
+      router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [isNavOpen])
+  }, [shouldScrollToContact, router.events])
+
+  const handleClickContact = () => {
+    if (router.pathname !== '/') {
+      setShouldScrollToContact(true) // Set the state to true to indicate the next action
+      router.push('/')
+    } else {
+      // We are already on the home page, so scroll directly
+      document
+        .getElementById('contact-section')
+        ?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const isActiveLink = (path: string, routerPath: string): boolean => {
+    return routerPath === path
+  }
+
   return (
-    <header className="bg-white border-b border-gray-200 fixed w-full z-30 top-0 text-gray-900">
-      <div className="container mx-auto flex items-center justify-between p-5">
+    <header className="relative w-full z-30 pt-12 text-gray-900 px-10 md:px-0 ">
+      <div className="container mx-auto flex items-center justify-between md:w-10/12">
         {/* Left side - Logo and Nav Items for medium screens and up */}
         <div className="flex items-center justify-start">
-          <Link href="/">
-            <div className="title-font font-medium text-gray-900 cursor-pointer">
-              <span className="text-xl">Samora</span>
-            </div>
-          </Link>
-          <nav className="hidden md:block ml-10 absolute md:relative w-full md:w-auto left-0 md:left-auto">
-            <ul className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-              <li>
-                <Link href="/work">Work</Link>
+          <nav className="hidden md:block absolute md:relative w-full md:w-auto left-0 md:left-auto">
+            <ul className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-10">
+              <li
+                className={`${
+                  isActiveLink('/', router.pathname)
+                    ? 'text-blue-400'
+                    : 'text-gray-900'
+                } hover:text-blue-500`}
+              >
+                <Link href="/">
+                  <p>Work</p>
+                </Link>
               </li>
-              <li>
-                <Link href="/process">Process</Link>
+              <li
+                className={`${
+                  isActiveLink('/about', router.pathname)
+                    ? 'text-blue-500'
+                    : 'text-gray-900'
+                } hover:text-blue-500`}
+              >
+                <Link href="/about">
+                  <p> About</p>
+                </Link>
               </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
+              {/* For non-path based 'Contact' you can use state to manage the active color */}
+              <li
+                className={`${
+                  shouldScrollToContact ? 'text-blue-500' : 'text-gray-900'
+                } hover:text-blue-500`}
+              >
+                <button onClick={handleClickContact}>
+                  <p>Contact</p>
+                </button>
               </li>
             </ul>
           </nav>
         </div>
-
+        <div className="flex-1 flex items-center justify-start md:justify-center">
+          <Link href="/">
+            <div className="title-font font-medium text-gray-900 cursor-pointer">
+              <span className="text-3xl">Samora</span>
+            </div>
+          </Link>
+        </div>
         {/* Right side - Menu icon for mobile and Social Icons for medium screens and up */}
         <div className="flex items-center">
           {/* Menu Icon for mobile */}
@@ -68,31 +113,10 @@ const Header = () => {
           </div>
 
           {/* Social Icons - hidden on mobile */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Image
-              src="/icons/twitter.svg"
-              alt="Twitter"
-              width={24}
-              height={24}
-            />
-            <Image
-              src="/icons/instagram.svg"
-              alt="Instagram"
-              width={24}
-              height={24}
-            />
-            <Image
-              src="/icons/facebook.svg"
-              alt="Facebook"
-              width={24}
-              height={24}
-            />
-            <Image
-              src="/icons/linkedin.svg"
-              alt="LinkedIn"
-              width={24}
-              height={24}
-            />
+          <div className="hidden md:flex items-center space-x-10">
+            <IconTwitter />
+            <IconGithub />
+            <IconBxlLinkedinSquare />
           </div>
         </div>
 
