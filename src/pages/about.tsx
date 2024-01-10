@@ -10,10 +10,10 @@ const About = () => {
         <div className="md:w-10/12 mx-auto px-4 py-16 flex flex-col md:flex-row">
           <div className="md:w-1/2 space-y-6">
             <h1 className="text-4xl ">
-              Samora is an enthusiastic creator focused on creating in-demand
+              Samora is an enthusiastic creator focused on creating in demand
               web experiences for his users.
             </h1>
-            <h2 className="border-t-2 border-b-2 border-gray-400 text-2xl mt-4 mb-2 py-4 text-center">
+            <h2 className="border-t-2 border-b-2 border-gray-300 text-2xl mt-4 mb-2 py-4 text-center">
               Hi there
             </h2>
             <p className="text-md">

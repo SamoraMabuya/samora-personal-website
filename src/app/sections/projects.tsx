@@ -41,7 +41,7 @@ const Projects = () => {
           {projectItems.map((item, index) => (
             <div
               key={index}
-              className="relative border-2 border-gray-400 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
+              className="relative border-2 border-gray-300 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer"
             >
               <div onClick={() => window.open(item.liveVersion, '_blank')}>
                 <Image

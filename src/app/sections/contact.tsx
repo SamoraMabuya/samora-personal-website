@@ -9,7 +9,7 @@ const Contact = () => {
   return (
     <section id="contact-section" className="py-12">
       <div className="container mx-auto px-4 text-center md:w-10/12">
-        <div className="container mx-auto px-4 text-center border-t border-gray-400 py-8">
+        <div className="container mx-auto px-4 text-center border-t border-gray-300 py-8">
           <h2 className="text-2xl mb-4">Feel free to shoot me an email</h2>
           <Link
             href="mailto:samora.sm.sam@gmail.com"
