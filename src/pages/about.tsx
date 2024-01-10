@@ -10,12 +10,13 @@ const About = () => {
         <div className="md:w-10/12 mx-auto px-4 py-16 flex flex-col md:flex-row">
           <div className="md:w-1/2 space-y-6">
             <h1 className="text-4xl ">
-              Samora is a developer and visual designer based in South Africa.
+              Samora is an enthusiastic creator focused on creating in-demand
+              web experiences for his users.
             </h1>
             <h2 className="border-t-2 border-b-2 border-gray-400 text-2xl mt-4 mb-2 py-4 text-center">
               Hi there
             </h2>
-            <p className="text-lg">
+            <p className="text-md">
               Samora is an enthusiastic creator known for his blend of technical
               and design abilities, using his skills to create visually
               appealing and functional web experiences for users.

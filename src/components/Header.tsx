@@ -86,7 +86,7 @@ const Header = () => {
         <div className="flex-1 flex items-center justify-start md:justify-center">
           <Link href="/">
             <div className="title-font font-medium text-gray-900 cursor-pointer">
-              <span className="text-3xl">Samora</span>
+              <h2 className="text-3xl">Samora</h2>
             </div>
           </Link>
         </div>

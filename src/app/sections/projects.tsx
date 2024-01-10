@@ -62,14 +62,14 @@ const Projects = () => {
                   className="flex items-center cursor-pointer hover:text-blue-500"
                 >
                   <IconGithub />
-                  <p className="ml-2">GitHub</p>
+                  <p className="ml-2 ext-md">GitHub</p>
                 </div>
                 <div
                   onClick={() => window.open(item.liveVersion, '_blank')}
                   className="flex items-center cursor-pointer hover:text-blue-500"
                 >
                   <IconFigma />
-                  <p className="ml-2">Live</p>
+                  <p className="ml-2 ext-md">Live</p>
                 </div>
               </div>
             </div>
