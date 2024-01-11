@@ -26,6 +26,7 @@ const Header = () => {
   }, [shouldScrollToContact, router.events])
 
   const handleClickContact = () => {
+    console.log('scroll clicked')
     if (router.pathname !== '/') {
       setShouldScrollToContact(true) // Set the state to true to indicate the next action
       router.push('/')

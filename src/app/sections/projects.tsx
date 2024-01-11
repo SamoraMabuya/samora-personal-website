@@ -57,20 +57,18 @@ const Projects = () => {
               <hr className="my-2 border-gray-300" />
               <p className="text-md">{item.description}</p>
               <div className="flex justify-between mt-4">
-                <div
-                  onClick={() => window.open(item.github, '_blank')}
+                <Link href={item.github}
                   className="flex items-center cursor-pointer hover:text-blue-500"
                 >
                   <IconGithub />
                   <p className="ml-2 ext-md">GitHub</p>
-                </div>
-                <div
-                  onClick={() => window.open(item.liveVersion, '_blank')}
+                </Link>
+                <Link href={item.liveVersion}
                   className="flex items-center cursor-pointer hover:text-blue-500"
                 >
                   <IconFigma />
                   <p className="ml-2 ext-md">Live</p>
-                </div>
+                </Link>
               </div>
             </div>
           ))}
