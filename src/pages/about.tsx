@@ -63,7 +63,7 @@ const About = () => {
             <Image
               src="/portrait-of-samora.webp"
               alt="A picture of Samora"
-              width={400}
+              width={600}
               height={550}
               className="rounded-lg"
             />
