@@ -61,7 +61,7 @@ const About = () => {
           </div>
           <div className="md:w-1/2 mt-10 md:mt-0 md:ml-10 self-start">
             <Image
-              src="/portrait-of-samora.webp" // Replace with your image path
+              src="https://personal-website-assets.nyc3.cdn.digitaloceanspaces.com/portrait-of-samora.webp"
               alt="A picture of Samora"
               width={400}
               height={550}
