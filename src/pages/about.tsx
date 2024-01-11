@@ -61,11 +61,10 @@ const About = () => {
           </div>
           <div className="md:w-1/2 mt-10 md:mt-0 md:ml-10 self-start">
             <Image
-              src="https://personal-website-assets.nyc3.cdn.digitaloceanspaces.com/portrait-of-samora.webp"
+              src="/portrait-of-samora.webp"
               alt="A picture of Samora"
               width={400}
               height={550}
-              layout="responsive"
               className="rounded-lg"
             />
           </div>

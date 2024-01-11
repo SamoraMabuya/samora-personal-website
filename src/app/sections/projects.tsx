@@ -25,8 +25,7 @@ const Projects = () => {
   const projectItems = [
     {
       title: 'Neonize',
-      imageUrl:
-        'https://personal-website-assets.nyc3.cdn.digitaloceanspaces.com/neonize-cover.webp',
+      imageUrl: '/neonize-cover.webp',
       description:
         'Neonize is a figma plugin that Figma enthusiasts can use to enhance their designs with glow effects.',
       github: 'https://github.com/SamoraMabuya/neonize',
