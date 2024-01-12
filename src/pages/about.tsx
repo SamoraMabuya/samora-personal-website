@@ -9,7 +9,7 @@ const About = () => {
       <div>
         <div className="md:w-10/12 mx-auto px-4 py-16 flex flex-col md:flex-row">
           <div className="md:w-1/2 space-y-6">
-            <h1 className="text-4xl ">
+            <h1 className="md:w-10/12 text-lg md:text-4xl text-center md:text-left">
               Samora is an enthusiastic creator focused on creating in demand
               web experiences for his users.
             </h1>

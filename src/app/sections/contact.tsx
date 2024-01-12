@@ -13,7 +13,7 @@ const Contact = () => {
           <h2 className="text-2xl mb-4">Feel free to shoot me an email</h2>
           <Link
             href="mailto:samora.sm.sam@gmail.com"
-            className="text-lg block hover:text-blue-500 mb-4"
+            className="text-lg hover:text-blue-500 mb-4"
           >
             <p>samora.sm.sam@gmail.com</p>
           </Link>

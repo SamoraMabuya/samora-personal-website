@@ -36,10 +36,15 @@ const Header = () => {
         .getElementById('contact-section')
         ?.scrollIntoView({ behavior: 'smooth' })
     }
+    closeMobileMenu()
   }
 
   const isActiveLink = (path: string, routerPath: string): boolean => {
     return routerPath === path
+  }
+
+  const closeMobileMenu = () => {
+    setIsNavOpen(false)
   }
 
   return (
@@ -122,34 +127,15 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu - Full-screen overlay or off-canvas menu */}
+
         <div
           className={`${
             isNavOpen ? 'fixed' : 'hidden'
-          } inset-0 bg-[#71717a] z-50 overflow-y-auto h-full w-full`}
-        >
-          <ul className="p-5 space-y-4">
-            <li>
-              <Link href="/work">Work</Link>
-            </li>
-            <li>
-              <Link href="/process">Process</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </div>
-        <div
-          className={`${
-            isNavOpen ? 'fixed' : 'hidden'
-          } inset-0 bg-[#71717a] z-50 overflow-y-auto h-full w-full`}
+          } inset-0 bg-[#71717a] z-50 overflow-y-auto h-full w-full flex items-center justify-center`}
         >
           <button
             onClick={() => setIsNavOpen(false)}
-            className="p-4 text-white float-right"
+            className="p-4 text-white absolute top-0 right-0"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -166,18 +152,36 @@ const Header = () => {
               />
             </svg>
           </button>
-          <ul className="flex flex-col items-center justify-center min-h-screen pt-10 space-y-10">
-            <li className="text-white">
-              <Link href="/work">Work</Link>
+          <ul className="text-center space-y-10">
+            <li
+              className={
+                isActiveLink('/', router.pathname)
+                  ? 'text-blue-400'
+                  : 'text-white'
+              }
+            >
+              <Link href="/" onClick={closeMobileMenu}>
+                <p>Work</p>
+              </Link>
             </li>
-            <li className="text-white">
-              <Link href="/process">Process</Link>
+            <li
+              className={
+                isActiveLink('/about', router.pathname)
+                  ? 'text-blue-500'
+                  : 'text-white'
+              }
+            >
+              <Link href="/about" onClick={closeMobileMenu}>
+                <p> About</p>
+              </Link>
             </li>
-            <li className="text-white">
-              <Link href="/about">About</Link>
-            </li>
-            <li className="text-white">
-              <Link href="/contact">Contact</Link>
+            {/* For non-path based 'Contact' you can use state to manage the active color */}
+            <li
+              className={shouldScrollToContact ? 'text-blue-500' : 'text-white'}
+            >
+              <button onClick={handleClickContact}>
+                <p>Contact</p>
+              </button>
             </li>
           </ul>
         </div>
