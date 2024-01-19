@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { IconTwitter, IconGithub, IconBxlLinkedinSquare } from './Icons'
 import { useRouter } from 'next/router'
-
+import Image from 'next/image'
 const Header = () => {
   const router = useRouter()
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -91,8 +91,8 @@ const Header = () => {
         </div>
         <div className="flex-1 flex items-center justify-start md:justify-center">
           <Link href="/">
-            <div className="title-font font-medium text-gray-900 cursor-pointer">
-              <h2 className="text-3xl">Samora</h2>
+            <div className="w-5/12 title-font font-medium text-gray-900 cursor-pointer">
+              <Image width={100} height={100} src={'/sLogo.svg'} alt={'logo'} />
             </div>
           </Link>
         </div>

@@ -66,6 +66,8 @@ const About = () => {
               width={600}
               height={550}
               className="rounded-lg"
+              loading="eager"
+              priority
             />
           </div>
         </div>
